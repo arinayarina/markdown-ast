@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<style type="text/css">
+h1 {
+  text-align: center;
+}
+label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    line-height: 1.5;
+    border: 1px solid #c6cad7;
+    width: 80%;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#markdown_editor, #input_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+button {
+  border: 1px solid #fff;
+  min-width: 15%;
+  font-size: 16pt;
+}
+
+.flex-column {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+#markdown-render {
+  width: 80%;
+  border: 1px solid #c6cad7;
+}
+
+.renderjson {
+  font-family: "Courier";
+}
+.renderjson a { text-decoration: none; }
+.renderjson .disclosure { color: #d2b309;
+                          font-size: 130%; }
+.renderjson .syntax { color: grey; }
+.renderjson .string { color: #262db9; }
+.renderjson .number { color: darkcyan; }
+.renderjson .boolean { color: blueviolet; }
+.renderjson .key    { color: #505050; }
+.renderjson .keyword { color: blue; }
+.renderjson .object.syntax { color: lightseagreen; }
+.renderjson .array.syntax  { color: orange; }
+</style>
+<script type="text/javascript" src="/public/renderjson.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="module" src="/public/main.js"></script>
+
+
+<h1>Markdown Parser</h1>
+
+<div id="markdown_editor">
+  <div class="flex-column">
+  <textarea name="md-textarea" id="md-textarea" rows=20 placeholder="Markdown..."></textarea>
+  </div>
+  <div class="flex-column">
+  <div id="markdown-render"></div>
+  </div>
+</div>
+
+<div id="input_container">
+  <button id="button-parse">Parse</button>
+  <button id="button-clear">Clear</button>
+</div>
+
+
+</body>
+</html>
